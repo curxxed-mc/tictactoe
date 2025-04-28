@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="net.curxxed.tictactoe.GameController" spacing="10" alignment="CENTER" styleClass="root" stylesheets="dark-theme.css">
+
+
+    <Label text="Tic Tac Toe" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Select Difficulty:" />
+        <ComboBox fx:id="aiChoice">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Easy" />
+                    <String fx:value="Normal" />
+                    <String fx:value="Hard" />
+                    <String fx:value="Random" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="startButton" text="Start Game" onAction="#onStart" />
+    </HBox>
+
+    <VBox alignment="CENTER">
+        <GridPane fx:id="grid" alignment="CENTER" hgap="5" vgap="5" styleClass="grid-pane" maxWidth="300" maxHeight="300">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33.33" />
+                <ColumnConstraints percentWidth="33.33" />
+                <ColumnConstraints percentWidth="33.33" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="33.33" />
+                <RowConstraints percentHeight="33.33" />
+                <RowConstraints percentHeight="33.33" />
+            </rowConstraints>
+        </GridPane>
+    </VBox>
+
+    <Label fx:id="statusLabel" text="Choose difficulty and press Start to begin!" style="-fx-font-size: 16px;" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="restartButton" text="Restart Game" onAction="#onRestart" />
+    </HBox>
+
+</VBox>
