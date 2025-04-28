@@ -1,6 +1,5 @@
 ✨ Features
 
-     Win detection and draw handling
      Simple and clean interface
      Lightweight and easy to understand
 
